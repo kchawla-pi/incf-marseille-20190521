@@ -1,0 +1,54 @@
+Hello.
+My name and role are here.
+This is what I will talk about.
+We have 10 minutes. Lets get to it.
+
+The sponsors of my salary told me I have to namedrop our open source project, so here it is.
+
+But this could be for any project.
+
+I like to think we have created a successful Open Source Project.
+Here I articulate some thoughts about what helps. Some are mine, many from giants whose shoulders I stand on.
+
+##########################################
+What is the story your project is telling?
+------------------------------------------
+
+I tried making the slides for this presntation. I couldn't. I listed a bunch of good, clear points but could not think of what to say for each of them.
+So I wrote a story to organize my thoughts. Then it became easy to make the slides.
+We need a good narrative to be able to think about what to make.
+
+WHat story does your softwre tell?
+
+Nilearn's story is that it does MVPA analysis of fMRI data, it is simple to use and easy to contribute to.
+Once we knew this is our story, it also became our guiding principle, everytime we made design decisions.
+
+We chose Python not C++ etc, becuse it made it easier to contribute to by other users.
+We preferred useing functions, using classes only where necessary.
+
+#############################
+Think from a User Perspective
+-----------------------------
+
+If you have seen the movie "Being John Malkovich", in the movie there's a magical room in where you get to experience life through the eyes of the titular character, John Malkovich.
+You see what he sees, feel what he feels, and so on.
+
+Sit in front of the PC, try to install your project.
+Ask someone from outside your circle, without giving them 'tips and suggestion', "Hey! Here's the documentation link. Install it and give me feedback."
+
+Is it an easy pip install and done? 
+Or does one have to tweak configurations? 
+Manually install 10 dependencies for most of the functionality?
+Download this binary from here and add it to the PATH?
+Every step adds inertia.
+Make your project easy to install. Do the heavy lifting for the users.
+
+If there're a lot of barriers in installing the software, the stroy is askew.
+
+
+############################################
+
+
+
+
+If you think of more things, or wanna say hey this sounds like sunshine, rainbows, & unicorns, and that's not what happens in reality, there's my email.

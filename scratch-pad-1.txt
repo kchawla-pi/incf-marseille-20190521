@@ -1,0 +1,66 @@
+LEt them know
+
+Neuroinfo framework
+
+Pros in the domain
+Bad at sharing software and data
+Wake them up
+
+focus on org, efficient, share software, data
+
+We have successful exp with nilearn, we wanna share them.
+Unwritten rules - OSS< online disccussions, open discussion, 
+involve community in design choice
+dont chase all features
+
+
+This is interesting to these ppl.
+
+Pitch Nilearn in that direction.
+
+
+Poster:
+How to make an OSS successful, nilearn as example.
+
+
+Think of main messages.
+
+
+Main Message(?): How did we build Nilearn so successfully??
+Discuss this wit Gael also
+
+Take a user perspective in everything:
+Only python code
+docs not feature
+simplicity of use
+API consistency
+Make it easy to install
+Avoid Framework
+Think in terms of Community not technique.
+Convex Optimizaton...huh? Have the language of community irrespective of background. Manafging social aspects of community is more important thatn forcing self perspective on sofrwaee desifn
+
+
+Dont share latest contribution in community library. Share robust things, not latest thing done. Reliable work is much more important than fancy feature.
+Most OSS fail due to this.. Do we have a concrete exmple?
+Methods like FREM. Paper 2yrs old, feature now. Not until we were sure it was ribust and reliable.
+
+Dont focus on the gui first.(Contentious maybe)
+
+Be social: Coding sprint, hackathon, conferences, neurostars user engagement.
+
+Our rules
+First Target Users who will also be developers.
+End user not a developer will cost a lot.
+Another reason to not start with a GUI.
+
+Always have a demonstrative real world example.
+
+Jake Vogel exaple, interaction and encouragement of new contributors, stick with python not c++ for more contributors.
+
+
+Ask Camille maybe about a lightning talk:
+-----------------------------------------------------------------------------------------------------------------------------------------------
+===============================================================================================================================================
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Make it open, have discussions online, involve community in design choices, not all feature requests - focus on the few important things.

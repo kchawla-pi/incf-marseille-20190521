@@ -1,0 +1,130 @@
+Begin
+=====
+Nilearn employs Scikit-learns Machine-Learning prowess for fMRI analysis. It was created in 2014. 
+
+Well begun is half done
+=======================
+
+Know Thyself
+------------
+Nilearn had a good narrative to guide overall design decisions.
+Nilearn's story is that it does MVPA analysis of fMRI data, it is simple to use, easy to contribute to, and does not spring surprises. Its goal is to be a valuable, self-sustaining open-source product.
+This narrative is our guiding principle, every design & implementation decision, large and small benefits from this litmus test.
+
+
+The Right Tool
+--------------
+Nilearn is built with Python. I am told that was not the most usual choice at the time. It was a tremndous benefit for th project. Python's growing popularity, lower barrier of entry for, expanding scientific library meant that it was easy for people who used Nilearn to quickly become contributors to Nilearn. This wouldn't have been so easy if Nilearn was written using C/C++ .
+
+User+Developer
+--------------
+Nilearn benefitted from the fact, that due to people involved in its conception and their professional circle, a large percentage of initial testes and users were also Pyhon developers. This made it considerably easier to rapidly prototype changes and have them fixed, issues filed with accompanying pull requests to fix them, experienced user-developers willing to do code reviews and discussions.
+Not implementing a GUI (esp in the begining) might have been a factor in this as well.
+
+User Perspective
+----------------
+A lot of our interface and documentation is built with a novice fMRI researcher in mind. A stalwart of the field will not likely to break their established workflow and may not have time to try out new unheard of packages just for the sake of it. A novice in the field will adopt the tools of their labs but they will also google around and see what else is there and try things out, and if they find Nilearn and find it is easy to start with and has these great examples which also teach fMRI concepts well, that will create mindshare.
+Also building for novices
+
+
+Make it easy for users 
+======================
+
+Lower barriers for entry
+------------------------
+Easy installation. If the software relies on an external binary and if one has to sign up online to get the link to that binary which has to be then downloaded and installed, and added manually to the system PATH by editing a config file? Well sometimes there maybe no feasible way around it, but every extra step discourages people from quickly trying out the software. Test & document the idiosyncrncies of installation well, and put it somewhere obvious and easy to find. Many linux apps use Java. Does it run without a hiccup with the latest Java or JVM, or must it need an older version? Do all the heavy lifting, if possible.
+
+
+Documentation & examples for everything
+---------------------------------------
+A non-negotiable rule in Nilearn is every new feature must be accompanied by documentation shocasing its use in a real-world scenario.
+If there is no demonstration of using the feature in a real-world workflow, then that feature cannot be merged, period. 
+This, we believe, has paid big  dividneds in more ways than one.
+Of course, this made it easy for new users to get a real handle on what each feature can do for their analysis, and how do start playing with it in real scenarios.
+It also meant beta testers who had a good handle on how to use an under-development feature could contribute to the project, even if they didn't wanna write production code, by writing great examples and submitting those as Pull Requests.
+And often this helped new contributors get used to submitting PRs, opening up the gateway to future contributions.
+
+
+The Consistency Within
+----------------------
+In Nilearn we try to keep the API consistent, and name functions, classes, methods to be predictable -- things that do similar things should be named similarly, have similar parameters, return similar types of data.
+Similar functions have similar parameters in name and descriptions in their docstrings, in similar order.
+What this means is once users are familiar with one function/class/ethod, it is easy to start using an entire family of similar entities.
+
+Example:
+make_design_matrix  -->  make_first_level_design_matrix 
+create_second_level_design --> make_second_level_design_matrix 
+
+Make and create mean the same, why create a situation where the user may wonder what is the difference?
+Same for check vs verify . 
+
+All functions that plot static images in Nilearn are called plot_<something> .
+All functions that create an interactive view of the data in Nilearn are called view_<something> .
+
+
+Don't move fast. Don't break things
+-----------------------------------
+
+Don't implement HOT new analyses methods. Wait a few years until it has become established, the strengths and limitations well understood, trustworthy.
+One example that was given to me was FReM (Fast Regularized ensemble of Models) Decoding. The paper was published in 2017 by our lab, but we didn't go omg this is such a cool technique, we are so cool, we must put this in Nilearn like yesterday! The stewards of Nilearn were also careful to focus on building a community around a small set of useful features and reliable techniques, instead of trying to incorporate every feature and technique.
+
+
+Make it easy for developers
+===========================
+
+"Stick with good software engineering principles. Personal philosophies about code should remain personal."
+
+Every user is a potential developer
+----------------------------------- 
+Especially for people who have not contributed code or documentation in a production quality software project.
+When a user files an issue regarding Nilearn, if its not a complicated change, we invite them to submit a PR to make that change. We promise them we will be right next to them every step of the way. And then keep that promise. We share resources with thm to get started and if they are having trouble with that, we walk them step by step on how to fork the repo, how to add remotes to git, creating the right environment for development work, making their first changes, pushing it, opening a PR.
+
+What kind of comments to write in the issue and PR to keep it well-informed for others.
+
+We then review the PR. 
+We thank them
+
+We make the effort to remind ourselves that this is a gift they are giving us, a gift they didnt have to.
+We always thank them and congratulate them. Then we point out where they should make changes, and give a good explanation WHY they should make those changes.
+A lot of them feel guilty that they are taking up so much of our time, and we always respond with the truth:
+
+That we can do what we can do because someone else took the time to help us out.
+That they are the ones doing us a big help.
+
+This good experience helps them come back and some of them become regular contributors, fixing lots of things big and small that we either didn't know about or are stretched too thin to address on our own.
+
+What language we use here matters a lot.
+
+Saying "This function is too long. You must break it down and add unit tests for each of them."
+This has 3 problems. 
+1. Saying "You did this" instinctively makes people feel they are being blamed, and no matter how much one may tell oneself that hey its okay that's not what they mean, a PR is a long process with many code reviews and many comments in each code review and all this sentiment builds up and damages long term relationship desite the best intentions of everyone involved.
+2. It sounds like a command, which again, something people don't like when they are basically doing us the help. So same problem, plus it does not inculcate a feeling of ownership and pride in their work.
+3. It doesn't educate and explain WHY the long function is a problem.
+4. It doesn't educate and explain WHAT to do to break it down.
+
+Lets try it another way:
+
+Hey! Thanks for doing this! The code is pretty decent.
+This function here is very long and is doing many things. 
+That will make it harder to write granular tests and also impedes easily understanding what the function is doing.
+I notice you have helpfully added useful comments, explaining what each sub-section is doing. 
+That is a good indicator that a function is too long, and these are good spots to segregate th functionality.
+Once that has been done, we can write tests for each sub-function.
+
+This is how we try to do  it. 
+It is completely honest about everything (we don't say its a good comment if it is not a good comment),
+It is respectful, actionable, educational, and builds good long-term working relationshps.
+
+Be Social
+=========
+
+We regularly organize Coding sprints, hackathons, conferences. Invite new people interested in participating, in coding, in using.
+We do tutorials and talk to people about how they use NIlearn, gathering feedback.
+We monitor Neurostars.org, a question-answer site for neuroscience, monitoring questions tagged with 'nilearn' and then give good answers for those questions.
+
+
+
+
+
+
+
